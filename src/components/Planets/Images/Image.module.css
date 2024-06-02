@@ -1,0 +1,24 @@
+.planet-image-container {
+  grid-area: image;
+  display: flex;
+  max-height: 700px;
+  height: 100vw;
+  align-items: center;
+  justify-content: center;
+}
+.geo {
+  position: absolute;
+  max-width: 12rem;
+  top: 55%;
+}
+@media (max-width: 800px) {
+  .planet-image {
+    max-width: 20rem;
+  }
+  .planet-image-container {
+    position: relative;
+  }
+  .geo {
+    max-width: 9rem;
+  }
+}

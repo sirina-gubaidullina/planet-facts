@@ -1,0 +1,122 @@
+header {
+  height: 100%;
+  border-bottom: 1px solid var(--grayDark);
+}
+nav {
+  height: 85px;
+  margin: 0 clamp(2rem, 10vw, 20rem);
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  font-family: "Antonio", sans-serif;
+  font-weight: 700;
+  display: flex;
+  font-size: 1.1rem;
+  align-items: center;
+  color: var(--white);
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  gap: 1.9rem;
+  margin: 0;
+  padding: 0;
+}
+.link {
+  color: var(--whiteAlpha75);
+  font-family: "League Spartan", sans-serif;
+  height: 100%;
+  text-decoration: none;
+  display: flex;
+  position: relative;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 300ms ease;
+}
+
+.link::after {
+  position: absolute;
+  content: "";
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--white);
+  transform: scaleX(0);
+  transition: transform 350ms ease;
+}
+.link:hover {
+  &::after {
+    transform: scaleX(1);
+  }
+  color: var(--white);
+}
+.toggle {
+  display: none;
+  border: none;
+  background-color: transparent;
+  fill: var(--whiteAlpha50);
+  cursor: pointer;
+}
+.toggle:hover {
+  fill: var(--white);
+}
+.icon-close {
+  border: none;
+  max-width: 50px;
+  background-color: hsl(0, 0%, 0%, 0);
+  fill: var(--whiteAlpha50);
+  margin: 1rem 0 2rem 1rem;
+  cursor: pointer;
+}
+.icon-close:hover {
+  fill: var(--white);
+}
+.nav-menu {
+  background-color: var(--black);
+  width: 100%;
+  height: 100%;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 20px;
+  left: 0;
+  z-index: 100;
+}
+
+.side-links {
+  list-style: none;
+  padding: 0;
+}
+.side-link {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--whiteAlpha50);
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 0 0 2rem 1rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  z-index: 100;
+}
+@media (hover: none) {
+  .side-link:active {
+    color: var(--white);
+  }
+}
+@media (max-width: 800px) {
+  .links {
+    display: none;
+  }
+  .toggle {
+    display: block;
+  }
+}
